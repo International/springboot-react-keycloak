@@ -26,7 +26,7 @@ services:
       start_period: 10s
 
   keycloak:
-    image: jboss/keycloak:6.0.1
+    image: jboss/keycloak-openshift:3.4.3.Final
     container_name: keycloak
     environment:
       - KEYCLOAK_USER=admin
@@ -42,4 +42,4 @@ services:
       - mysql
     healthcheck:
       test: "curl -f http://localhost:8080/auth || exit 1"
-      start_period: 20s
+      start_period: 120s
